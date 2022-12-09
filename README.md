@@ -1,4 +1,4 @@
-# :owl: Athena - Sistema pra gerenciamento de alunos e professores
+# :owl: Athena | Gerenciamento de alunos e professores
 Sistema para gerenciamento acadêmico de alunos e professores, utilizando Java, MySQL e a biblioteca Swing.  
 
 ![Athena](https://user-images.githubusercontent.com/77423877/206771796-c72764f8-9e70-453e-afa4-8aa64668f885.jpg)
