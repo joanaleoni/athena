@@ -6,7 +6,7 @@ Sistema para gerenciamento acadêmico de alunos e professores, utilizando Java, 
 Trabalho desenvolvido em grupo para a disciplina de Programação de Soluções Computacionais (1ª fase - Unisul).
 
 ## Integrantes do grupo
-- [Joana Leoni Pereira](https://github.com/joanaleoni) (Banco de dados, classes Model - Domain e DAO)
+- [Joana Leoni Pereira](https://github.com/joanaleoni) (Banco de dados, classes Model - Domain e DAO, pacote Database, pacote Utils)
 - [Karlos Eduardo Kaminski](https://github.com/KarlosEKaminski) (Classes Model - Domain e interface gráfica)
 - Milena Clara Ribeiro Rizzi (Classes Model - Domain e DAO e interface gráfica)
 - [Nicolas Araújo da Silveira Custódio](https://github.com/NicolasASC) (Banco de dados e interface gráfica)
