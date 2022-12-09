@@ -6,7 +6,7 @@ Sistema para gerenciamento acadêmico de alunos e professores, utilizando Java, 
 Trabalho desenvolvido em grupo para a disciplina de Programação de Soluções Computacionais (1ª fase - Unisul).
 
 ## Integrantes do grupo
-- Joana Leoni Pereira
+- [Joana Leoni Pereira](https://github.com/joanaleoni)
 - [Karlos Eduardo Kaminski](https://github.com/KarlosEKaminski)
 - Milena Clara Ribeiro Rizzi
 - [Nicolas Araújo da Silveira Custódio](https://github.com/NicolasASC)
