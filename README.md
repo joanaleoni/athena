@@ -7,9 +7,9 @@ Trabalho desenvolvido em grupo para a disciplina de Programação de Soluções 
 
 ## Integrantes do grupo
 - Joana Leoni Pereira
-- Karlos Eduardo Kaminski
+- [Karlos Eduardo Kaminski](https://github.com/KarlosEKaminski)
 - Milena Clara Ribeiro Rizzi
-- Nicolas Araújo da Silveira Custódio
+- [Nicolas Araújo da Silveira Custódio](https://github.com/NicolasASC)
 
 ## Vídeo de apresentação
 O vídeo de apresentação do projeto pode ser acessado através deste [link](https://drive.google.com/file/d/19t6ExkmsAgnmLyzXckOxS_hFhdxlixOC/view?usp=sharing).
