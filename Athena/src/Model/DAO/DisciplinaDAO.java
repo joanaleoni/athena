@@ -21,7 +21,7 @@ public class DisciplinaDAO {
     }
 
     public boolean inserir(Disciplina disciplina){
-        String sql = "INSERT INTO disciplina(codigo, nome, cargaHoraria) VALUES(?, ?, ?)";
+        String sql = "INSERT INTO disciplina(codigo, nome, carga_horaria) VALUES(?, ?, ?)";
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setString(1, disciplina.getCodigo());
@@ -35,7 +35,7 @@ public class DisciplinaDAO {
     }
     
     public boolean alterar(Disciplina disciplina){
-        String sql = "UPDATE disciplina SET nome=?, cargaHoraria=? WHERE codigo=?";
+        String sql = "UPDATE disciplina SET nome=?, carga_horaria=? WHERE codigo=?";
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setString(1, disciplina.getNome());
@@ -62,12 +62,10 @@ public class DisciplinaDAO {
     }
     
     public List<Disciplina> listar(){
-        String sql = "SELECT codigo, disciplina.nome as nome_disciplina, cargaHoraria, matricula, professor.nome as nome_professor, " +
-                     "dataNascimento, rg, cpf, dataAdmissao, salario, formacao, nivel_titulacao, ativo, turma.id as turma_id, ano_e_semestre FROM disciplina " +
+        String sql = "SELECT codigo, disciplina.nome as nome_disciplina, carga_horaria, matricula, professor.nome as nome_professor, " +
+                     "data_nascimento, rg, cpf, data_admissao, salario, formacao, nivel_titulacao, FROM disciplina " +
                      "LEFT JOIN professor_ministra_disciplina ON professor_ministra_disciplina.disciplina_codigo=codigo " +
-                     "LEFT JOIN professor ON professor_matricula=matricula " +
-                     "LEFT JOIN disciplina_has_turma ON disciplina_has_turma.disciplina_codigo=codigo " +
-                     "LEFT JOIN turma ON disciplina_has_turma.turma_id=turma.id";
+                     "LEFT JOIN professor ON professor_matricula=matricula";
         List<Disciplina> retorno = new ArrayList<>();
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
@@ -76,7 +74,7 @@ public class DisciplinaDAO {
                 Disciplina disciplina = new Disciplina();
                 disciplina.setCodigo(resultado.getString("codigo"));
                 disciplina.setNome(resultado.getString("nome_disciplina"));
-                disciplina.setCargaHoraria(resultado.getInt("cargaHoraria"));
+                disciplina.setCargaHoraria(resultado.getInt("carga_horaria"));
                 disciplina.setProfessoresMinistrantes(listarProfessoresMinistrantes(disciplina));
         
                 retorno.add(disciplina);
@@ -132,7 +130,7 @@ public class DisciplinaDAO {
     }
     
     public boolean adicionarProfessor(int matriculaProfessor, String codigoDisciplina){
-        String sql = "INSERT INTO professor_ministra_disciplina VALUES(?,?)";
+        String sql = "INSERT INTO professor_ministra_disciplina (professor_matricula, disciplina_codigo) VALUES(?,?)";
         
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
@@ -149,7 +147,7 @@ public class DisciplinaDAO {
     }
     
     public boolean excluirProfessor(int matriculaProfessor, String codigoDisciplina){
-        String sql = "DELETE FROM professor_ministra_disciplina WHERE disciplina_codigo='?' AND professor_matricula=?";
+        String sql = "DELETE FROM professor_ministra_disciplina WHERE disciplina_codigo=? AND professor_matricula=?";
         
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
@@ -166,7 +164,7 @@ public class DisciplinaDAO {
     }
     
     public boolean matricularAluno(int matriculaAluno, String codigoDisciplina){
-        String sql = "INSERT INTO disciplina_has_aluno VALUES(?,?)";
+        String sql = "INSERT INTO disciplina_has_aluno (disciplina_codigo, aluno_matricula) VALUES(?,?)";
         
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
@@ -182,7 +180,7 @@ public class DisciplinaDAO {
     }
     
     public boolean desmatricularAluno(int matriculaAluno, String codigoDisciplina){
-        String sql = "DELETE FROM disciplina_has_aluno WHERE disciplina_codigo='?' AND aluno_matricula=?";
+        String sql = "DELETE FROM disciplina_has_aluno WHERE disciplina_codigo=? AND aluno_matricula=?";
         
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
