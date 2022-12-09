@@ -3,10 +3,6 @@ package Utils;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-/**
- *
- * @author Nícolas
- */
 public class DateFormat {
     
     public static LocalDate converterDataSQL(String data){
