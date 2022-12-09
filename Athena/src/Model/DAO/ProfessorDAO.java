@@ -3,7 +3,7 @@ package Model.DAO;
 import Model.Database.Database;
 import Model.Database.DatabaseFactory;
 import Model.Domain.Professor;
-//import Model.Domain.Disciplina;
+import Model.Domain.Disciplina;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
